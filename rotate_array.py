@@ -1,9 +1,8 @@
 """
-  Rootate array (LeetCode)
-  
-  found at:  https://leetcode.com/explore/interview/card/top-interview-questions-easy/92/array/646/
-  
-  Given an array, rotate the array to the right by k steps, where k is non-negative.
+Rotate array (LeetCode)
+found at:  https://leetcode.com/explore/interview/card/top-interview-questions-easy/92/array/646/
+Given an array, rotate the array to the right by k steps, where k is non-negative.
+This solution beats 58.93% of other submitted solutions
 """
 
 import math 
