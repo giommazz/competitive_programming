@@ -4,6 +4,8 @@ Remove Nth Node From End of List (LeetCode)
 found at: https://leetcode.com/explore/interview/card/top-interview-questions-easy/93/linked-list/603/
 
 Given the head of a linked list, remove the nth node from the end of the list and return its head.
+
+This solution beats 84.95% of other submitted solutions
 """
 
 # Definition for singly-linked list.
