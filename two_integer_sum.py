@@ -26,3 +26,20 @@ def twoSum(nums: list[int], target: int) -> list[int]:
             i_end -= 1
         if curr_target < target:
             i_start += 1
+
+# the website's solution is even more elegant and uses a hashtable
+def twoSum(nums: list[int], target: int) -> list[int]:
+    # dictionary
+    indices = {}  # val -> index
+
+    for i, n in enumerate(nums):
+        # key is an element of `nums`, value is its index in `nums`
+        indices[n] = i
+
+    for i, n in enumerate(nums):
+        # subtract an element of nums from target
+        diff = target - n
+        # if the remainder is a key in the dictionary `indices`
+        if diff in indices and indices[diff] != i:
+            # return `i` and the index at `indices[diff]`
+            return [i, indices[diff]]
