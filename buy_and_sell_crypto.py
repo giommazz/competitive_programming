@@ -54,7 +54,7 @@ def maxProfit_twoPointer(prices: list[int]) -> int:
         else:
             left += 1
         right += 1
-    return profit            
+    return profit
 
 import random
 prices = [random.randint(1, 15) for _ in range(7)]
