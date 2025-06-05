@@ -54,9 +54,30 @@ def bfs(root):
         if node.right:
             queue.append(node.right)
 
-    
+
+def diameterOfBinaryTree(root) -> int:
+    res = 0
+
+    def dfs(root):
+        nonlocal res
+
+        if not root:
+            return 0
+        left = dfs(root.left)
+        right = dfs(root.right)
+        res = max(res, left + right)
+        height = 1 + max(left, right)
+        print(f"node {root.val}: diameter is {res}, height is {height}")
+        
+        return height
+
+    dfs(root)
+    return res
+
 print("Breadth-First Search")
 bfs(node_0)
 print()
 print("Depth-First Search")
 dfs(node_0)
+print()
+diameterOfBinaryTree(node_0)

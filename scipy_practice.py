@@ -43,7 +43,7 @@ M2 = np.array([[1, 2, 3], [4, 5, 6]])
 print(f"M2 shape: {M.shape}")
 
 # compute full SVD, returns: U in (2x2), s in (2x1), V in (3x3)
-U, s, V = linalg.svd(M2)
+U, s, V = svd(M2)
 
 # check that U and V are orthogonal
 assert np.allclose(np.all(U.T @ U == np.eye(U.shape[0]))), "U is not orthogonal!"
