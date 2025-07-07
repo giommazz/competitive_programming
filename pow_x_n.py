@@ -1,4 +1,4 @@
-import sys, time
+import sys
 sys.set_int_max_str_digits(1000000) 
 
 # helper function working only for positive `n`
@@ -22,8 +22,7 @@ def myPow(x: float, n: int) -> float:
         return myPow_(x, n)
     else: # final number is a rational (fraction)
         denom = myPow_(x, -n)
-        return 1/denom
-    
+        return 1/denom   
 
 # myPow(2,1048576)
 # myPow(2,33554432)
