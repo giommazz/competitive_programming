@@ -7,7 +7,7 @@ def twoSum(nums: list[int], target: int) -> list[int]:
     sorted_numpairs = sorted(enumerate(nums), key = lambda x:x[1])
     
     # unzip the sorted indices anmd the sorted keys
-    # `*` needed because there is mmore than one argument in `sorted_numpairs`
+    # `*` needed because there is more than one argument in `sorted_numpairs`
     sorted_indices, sorted_keys = zip(*sorted_numpairs)
     
     # browse `sorted_keys` with two indices, one at the start and one at the end
