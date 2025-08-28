@@ -2,7 +2,7 @@
 
 # eval_reverse_polish.py
 # Evaluate reverse Polish notation expression
-# Neetcode. https://neetcode.io/problems/evaluate-reverse-polish-notation?list=neetcode150
+# Neetcode: https://neetcode.io/problems/evaluate-reverse-polish-notation?list=neetcode150
 import math
 def evalRPN(tokens: list[str]) -> int:
     """
@@ -16,6 +16,13 @@ def evalRPN(tokens: list[str]) -> int:
     
     Time complexity: O(n), single pass over the tokens
     Space complexity: O(n), stack can hold up to all operands in worst case
+    
+    Edge cases:
+    - `tokens` empty list
+    - Single operand only
+    - Division by zero
+    - Negative numbers with `/` truncation toward zero
+    - Invalid token or arity mismatch
     """
     # Guard against empty input
     if tokens:
@@ -33,12 +40,12 @@ def evalRPN(tokens: list[str]) -> int:
                 # Push `token` to `stack`
                 stack.append(token)
             else: 
-                # Construct normal `a OPERATOR b` string
-                eval_result = str(stack[-2]) + token + str(stack[-1])
-                result = int(eval(eval_result))
                 # Pop operands from `stack`
-                stack.pop()
-                stack.pop()
+                second = stack.pop()
+                first = stack.pop()
+                # Construct normal `a OPERATOR b` string
+                eval_result = str(first) + token + str(second)
+                result = int(eval(eval_result))
                 # Push result `result` back to `stack`
                 stack.append(result)
 
