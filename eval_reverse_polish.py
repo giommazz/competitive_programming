@@ -1,7 +1,6 @@
 # Solving time: 33 minutes
 
 # eval_reverse_polish.py
-# Evaluate reverse Polish notation expression
 # Neetcode: https://neetcode.io/problems/evaluate-reverse-polish-notation?list=neetcode150
 import math
 def evalRPN(tokens: list[str]) -> int:
