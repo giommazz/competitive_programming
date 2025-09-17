@@ -1,11 +1,6 @@
 # bfs_and_dfs.py
 
-
-class TreeNode:
-    def __init__(self, val=0, left=None, right=None):
-        self.val = val
-        self.left = left
-        self.right = right
+from tree_utils import TreeNode
 
 nodes = [1, 6, 5, 8, 10]
 
@@ -31,27 +26,17 @@ def dfs(root):
 from collections import deque
 
 def bfs(root):
-    # empty tree: nothing to traverse
-    if root is None:
+    if root is None: # empty tree: nothing to traverse
         return
     
-    # initialize deque with `root`
-    queue = deque([root])
+    queue = deque([root]) # initialize deque with `root`, euivalent `queue.append(root)`
 
-    # process nodes level by level
     while queue:
-        # O(1) dequeue from left
-        node = queue.popleft()   
-        # visit the current node
-        print(node.val)
-
-        # enqueue left child if it exists
-        if node.left:
-            # O(1) enqueue to the right
-            queue.append(node.left)
-
-        # enqueue right child if it exists
-        if node.right:
+        node = queue.popleft() # O(1) dequeue from left
+        print(node.val) # visit the current node
+        if node.left: # enqueue left child if it exists
+            queue.append(node.left) # O(1) enqueue to the right
+        if node.right: # enqueue right child if it exists
             queue.append(node.right)
 
 
