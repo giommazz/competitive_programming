@@ -1,6 +1,4 @@
 # koko_eating_bananas.py
-
-# Solving time: ()
 # Neetcode: https://neetcode.io/problems/eating-bananas?list=neetcode150
 
 """
