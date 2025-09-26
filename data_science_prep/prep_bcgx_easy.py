@@ -14,7 +14,7 @@ df = pd.read_csv("data.csv") # read csv into DataFrame
 # Method 1: use `Pandas.dropna()`
 # df.dropna(inplace=True)
 # Method 2: use mask
-mask_nan = df.isnull().any(axis=1) # Pandas Series ("any" column with NaNs is flagged)
+mask_nan = df.isnull().any(axis=1) # Pandas Series ("any" row with NaNs is flagged)
 df = df[~mask_nan] # `~` flips the Boolean mask (bitwise NOT)
 df['value_sum'] = df['value1'] + df['value2']
 df = df[df["value_sum"]>100]
