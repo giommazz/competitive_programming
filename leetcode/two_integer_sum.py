@@ -1,5 +1,5 @@
 # https://neetcode.io/problems/two-integer-sum
-
+from typing import List
 
 def twoSum(nums: list[int], target: int) -> list[int]:
     # sort `enumerate(nums)` based on its keys, but also keep sorted (original) indices
@@ -27,19 +27,14 @@ def twoSum(nums: list[int], target: int) -> list[int]:
         if curr_target < target:
             i_start += 1
 
-# the website's solution is even more elegant and uses a hashtable
-def twoSum(nums: list[int], target: int) -> list[int]:
-    # dictionary
-    indices = {}  # val -> index
+# O(n) complexity
+def twoSum(nums: List[int], target: int) -> List[int]:
+    complements = dict()
+    # `complement` elements: key is complement wrt `target`, value is index
+    complements[target - nums[0]] = 0 # add first element of `nums`
 
-    for i, n in enumerate(nums):
-        # key is an element of `nums`, value is its index in `nums`
-        indices[n] = i
-
-    for i, n in enumerate(nums):
-        # subtract an element of nums from target
-        diff = target - n
-        # if the remainder is a key in the dictionary `indices`
-        if diff in indices and indices[diff] != i:
-            # return `i` and the index at `indices[diff]`
-            return [i, indices[diff]]
+    for i in range(1,len(nums)): # starting from second element of `nums`
+        key = nums[i]
+        if key in complements: # if current element is already in `complements.keys()`
+            return [complements[key], i] # return index corresponding to `complements[key]` and `i`
+        complements[target - key] = i # add new element to `complements`
